@@ -7,15 +7,19 @@
 
 var isArmstrong = function(num) {
   const originalNum = num
+  const length = num.toString().length
   const digits = []
   while(num > 0) {
     digits.push(num % 10)
     num = Math.floor(num/10)
   }
-  const raisedToPower3 = digits.map(it => it ** 3)
-  const sum = raisedToPower3.reduce((a, b) => a + b)
+  console.log(digits)
+  const raisedToTheCorrectPower = digits.map(it => it ** length)
+  console.log(raisedToTheCorrectPower)
+  const sum = raisedToTheCorrectPower.reduce((a, b) => a + b)
+  console.log(sum)
   return sum === originalNum
 };
 
-// 153 -> 1^3 + 5 ^ 3 + 3 ^ 3 == 153
-console.log(isArmstrong(153))
+// 1634
+console.log(isArmstrong(1634))
