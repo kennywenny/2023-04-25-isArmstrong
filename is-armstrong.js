@@ -8,7 +8,7 @@
 var isArmstrong = function(num) {
   const originalNum = num
   const length = num.toString().length
-  const digits = []
+  const digits = [0]
   while(num > 0) {
     digits.push(num % 10)
     num = Math.floor(num/10)
@@ -22,4 +22,4 @@ var isArmstrong = function(num) {
 };
 
 // 1634
-console.log(isArmstrong(1634))
+console.log(isArmstrong(0))
