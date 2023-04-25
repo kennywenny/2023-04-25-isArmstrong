@@ -5,4 +5,14 @@
 
 // TODO: Complete the function below:
 
-var isArmstrong = function(num) {};
+var isArmstrong = function(num) {
+  const digits = []
+  while(num > 0) {
+    digits.push(num % 10)
+    num = Math.floor(num/10)
+  }
+  console.log(digits)
+};
+
+// 153 -> 1^3 + 5 ^ 3 + 3 ^ 3 == 153
+isArmstrong(153)
