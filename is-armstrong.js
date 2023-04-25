@@ -5,16 +5,14 @@
 
 // TODO: Complete the function below:
 
-var isArmstrong = function(num) {
-  const originalNum = num
+var isArmstrong = function (num) {
   const length = num.toString().length
-  const digits = [0]
-  while(num > 0) {
-    digits.push(num % 10)
-    num = Math.floor(num/10)
-  }
-  const raisedToTheCorrectPower = digits.map(it => it ** length)
-  const sum = raisedToTheCorrectPower.reduce((a, b) => a + b)
-  return sum === originalNum
+  const sum = num.toString()
+    .split('')
+    .map(it => Number(it))
+    .map(it => it ** length)
+    .reduce((a, b) => a + b)
+  return sum === num
 };
 
+console.log(isArmstrong(153))
