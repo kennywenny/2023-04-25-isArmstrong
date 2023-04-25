@@ -13,13 +13,8 @@ var isArmstrong = function(num) {
     digits.push(num % 10)
     num = Math.floor(num/10)
   }
-  console.log(digits)
   const raisedToTheCorrectPower = digits.map(it => it ** length)
-  console.log(raisedToTheCorrectPower)
   const sum = raisedToTheCorrectPower.reduce((a, b) => a + b)
-  console.log(sum)
   return sum === originalNum
 };
 
-// 1634
-console.log(isArmstrong(0))
