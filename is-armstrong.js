@@ -6,13 +6,16 @@
 // TODO: Complete the function below:
 
 var isArmstrong = function(num) {
+  const originalNum = num
   const digits = []
   while(num > 0) {
     digits.push(num % 10)
     num = Math.floor(num/10)
   }
-  console.log(digits)
+  const raisedToPower3 = digits.map(it => it ** 3)
+  const sum = raisedToPower3.reduce((a, b) => a + b)
+  return sum === originalNum
 };
 
 // 153 -> 1^3 + 5 ^ 3 + 3 ^ 3 == 153
-isArmstrong(153)
+console.log(isArmstrong(153))
